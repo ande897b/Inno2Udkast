@@ -23,6 +23,7 @@ namespace Inno2Udkast
         public WindowForSettings()
         {
             InitializeComponent();
+            this.Title="Indstillinger";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

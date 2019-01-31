@@ -22,7 +22,11 @@ namespace Inno2Udkast
     {
         public MainWindow()
         {
+           
             InitializeComponent();
+            
+            Title = "Smart Køleskab";
+          
         }
 
        
@@ -49,6 +53,27 @@ namespace Inno2Udkast
             win3.Show();
             win3.webBrowser.Navigate("https://bit.ly/2xmbc0z");
         }
-       
+
+        private void importButton_Click(object sender, RoutedEventArgs e)
+        {
+      
+            MessageBoxResult result = MessageBox.Show("Importér sidste kvitering?", "Importér sidste kvitering?", MessageBoxButton.YesNoCancel);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    Txt6.Text = "Kartofler    Udløber om 14 dage";
+                    Txt5.Text = "Ost             Udløber om 9 dage";
+                    break;
+                case MessageBoxResult.No:
+                    MessageBox.Show("Inventar blev IKKE importeret", "");
+                    break;
+                case MessageBoxResult.Cancel:
+                    MessageBox.Show("Mission Aborted", "My App");
+                    break;
+            }
+            
+        
+        }
+        
     }
 }
